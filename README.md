@@ -1,4 +1,4 @@
-# Price Scraper + Currency Converter
+# Product Price Scraper + Currency Converter
 A Python project that scrapes book prices from books.toscrape.com
 It scrapes off the title an price in a different currency.
 The data is saved to a json.
@@ -9,6 +9,7 @@ The program also uses matplotlib to plot a bar graph to compare the original vs 
 Plots price comparison with matplotlib.
 
   
+
 
 
 
