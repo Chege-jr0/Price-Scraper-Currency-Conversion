@@ -1,0 +1,92 @@
+[
+    {
+        "name": "A Light in the Attic",
+        "original_price": 51.77,
+        "original_currency": "GBP",
+        "converted_price": 70.41,
+        "conversion_rate": 1.36,
+        "timestamp": "2025-09-14T14:21:56.650409",
+        "target_currency": "USD"
+    },
+    {
+        "name": "Tipping the Velvet",
+        "original_price": 53.74,
+        "original_currency": "GBP",
+        "converted_price": 73.09,
+        "conversion_rate": 1.36,
+        "timestamp": "2025-09-14T14:21:56.650409",
+        "target_currency": "USD"
+    },
+    {
+        "name": "Soumission",
+        "original_price": 50.1,
+        "original_currency": "GBP",
+        "converted_price": 68.14,
+        "conversion_rate": 1.36,
+        "timestamp": "2025-09-14T14:21:56.650409",
+        "target_currency": "USD"
+    },
+    {
+        "name": "Sharp Objects",
+        "original_price": 47.82,
+        "original_currency": "GBP",
+        "converted_price": 65.04,
+        "conversion_rate": 1.36,
+        "timestamp": "2025-09-14T14:21:56.650409",
+        "target_currency": "USD"
+    },
+    {
+        "name": "Sapiens: A Brief History of Humankind",
+        "original_price": 54.23,
+        "original_currency": "GBP",
+        "converted_price": 73.75,
+        "conversion_rate": 1.36,
+        "timestamp": "2025-09-14T14:21:56.650409",
+        "target_currency": "USD"
+    },
+    {
+        "name": "The Requiem Red",
+        "original_price": 22.65,
+        "original_currency": "GBP",
+        "converted_price": 30.8,
+        "conversion_rate": 1.36,
+        "timestamp": "2025-09-14T14:21:56.650409",
+        "target_currency": "USD"
+    },
+    {
+        "name": "The Dirty Little Secrets of Getting Your Dream Job",
+        "original_price": 33.34,
+        "original_currency": "GBP",
+        "converted_price": 45.34,
+        "conversion_rate": 1.36,
+        "timestamp": "2025-09-14T14:21:56.650409",
+        "target_currency": "USD"
+    },
+    {
+        "name": "The Coming Woman: A Novel Based on the Life of the Infamous Feminist, Victoria Woodhull",
+        "original_price": 17.93,
+        "original_currency": "GBP",
+        "converted_price": 24.38,
+        "conversion_rate": 1.36,
+        "timestamp": "2025-09-14T14:21:56.650409",
+        "target_currency": "USD"
+    },
+    {
+        "name": "The Boys in the Boat: Nine Americans and Their Epic Quest for Gold at the 1936 Berlin Olympics",
+        "original_price": 22.6,
+        "original_currency": "GBP",
+        "converted_price": 30.74,
+        "conversion_rate": 1.36,
+        "timestamp": "2025-09-14T14:21:56.650409",
+        "target_currency": "USD"
+    },
+    {
+        "name": "The Black Maria",
+        "original_price": 52.15,
+        "original_currency": "GBP",
+        "converted_price": 70.92,
+        "conversion_rate": 1.36,
+        "timestamp": "2025-09-14T14:21:56.650409",
+        "target_currency": "USD"
+    }
+]
