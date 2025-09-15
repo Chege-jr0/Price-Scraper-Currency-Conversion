@@ -161,91 +161,6 @@ def scrape_products():
         print(f"Warning: Only scraped {len(products)} products.")
     
     return products
-     
-
-def scrape_products():
-    """Scrape at least 10 products with error handling."""
-    products = []
-    url = "https://books.toscrape.com/"
-    page = 1
-    max_pages = 5
-    
-    while len(products) < 10 and page <= max_pages:
-        try:
-            print(f"Scraping page {page} at {url}...")
-            response = requests.get(url, timeout=10)
-            print(f"Status code: {response.status_code}")
-            response.raise_for_status()
-            with open(f"page_{page}_debug.html", "w", encoding="utf-8") as f:
-                f.write(response.text)
-            print(f"Saved HTML to page_{page}_debug.html")
-        except requests.exceptions.RequestException as e:
-            print(f"Connection error scraping page {page}: {e}")
-            break
-        
-        soup = BeautifulSoup(response.text, 'html.parser')
-        product_items = soup.find_all('article', class_='product_pod')[:20]
-        if not product_items:
-            print("Primary selector 'article.product_pod' found 0 items. Trying fallback...")
-            product_items = soup.find_all('div', class_='product_pod')[:20]
-        if not product_items:
-            print("Fallback selector 'div.product_pod' found 0 items. Dumping first 500 chars of HTML...")
-            print(soup.prettify()[:500])
-            print("No products found on this page.")
-            break
-        
-        print(f"Found {len(product_items)} product items")
-        
-        for item in product_items:
-            if len(products) >= 10:
-                break
-            # Title extraction
-            title_tag = item.find('h3')
-            if not title_tag:
-                print("Skipping item: No <h3> tag found")
-                continue
-            a_tag = title_tag.find('a')
-            if not a_tag:
-                print("Skipping item: No <a> tag in <h3>")
-                continue
-            title = a_tag.get('title', '').strip() or a_tag.text.strip()  # Fallback to text if no title attr
-            if not title:
-                print("Skipping item: No title found")
-                continue
-            
-            # Price extraction
-            price_tag = item.find('p', class_='price_color')
-            if not price_tag:
-                print("Skipping item: No <p class='price_color'> found")
-                continue
-            price_str = price_tag.text.strip()
-            import re
-            match = re.search(r'£(\d+\.\d{2})', price_str)
-            if match:
-                price = float(match.group(1))
-            else:
-                print(f"Skipping item: Invalid price format ({price_str})")
-                continue
-            
-            products.append({
-                'name': title,  # Consistent with display_table
-                'original_price': price,
-                'original_currency': from_currency
-            })
-            print(f"Added product: {title}")
-        
-        next_button = soup.find('li', class_='next')
-        if not next_button or not next_button.find('a'):
-            print("No more pages to scrape.")
-            break
-        next_url = next_button.find('a')['href']
-        url = "https://books.toscrape.com/" + next_url.replace('../', '')
-        page += 1
-    
-    if len(products) < 10:
-        print(f"Warning: Only scraped {len(products)} products.")
-    
-    return products
 def convert_prices(products, rate, timestamp):
     """Convert prices and add timestamp."""
     for prod in products:
@@ -363,3 +278,4 @@ if __name__ == "__main__":
 
 
      print(" Done! Check the files and plot. (Rates by exchangerate_api.com)")
+
