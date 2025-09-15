@@ -14,7 +14,7 @@ from_currency = "GBP"
 to_currency = "USD"
 
 def build_api_url(from_currency):
-    """ The aim of thuis function is to build the api url
+    """ The aim of this function is to build the api url
         The function uses the os module to read the api key from the .env file
         If there is no api key it uses the open, no key end point from ExchangeRate-API's free tier
         The function returns the complete url
@@ -360,5 +360,6 @@ if __name__ == "__main__":
      conv_prices = [p['converted_price'] for p in products[:10]]   
 
      plot_prices(orig_prices, conv_prices, names)
+
 
      print(" Done! Check the files and plot. (Rates by exchangerate_api.com)")
